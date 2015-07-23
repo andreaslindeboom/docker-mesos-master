@@ -1,13 +1,6 @@
-FROM ubuntu:trusty
+FROM andreaslindeboom/mesos-base:0.22.1
 
-ENV UPDATED_AT 2015-07-23 10:54
-
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
-    echo deb http://repos.mesosphere.io/ubuntu trusty main > /etc/apt/sources.list.d/mesosphere.list && \
-    apt-get update && \
-    apt-get -y install mesos
-
-ENV MESOS_WORK_DIR /tmp/mesos
+ENV UPDATED_AT 2015-07-23 14:36
 
 CMD [ "/usr/sbin/mesos-master" ]
 
